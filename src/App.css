@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-image: url(./assets/blue.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  
 }
 
 .App-logo {
@@ -13,6 +19,8 @@
   }
 }
 
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,6 +30,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  opacity: 0.8;
 }
 
 .App-link {

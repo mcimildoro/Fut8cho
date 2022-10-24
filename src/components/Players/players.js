@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Bootstrap from "bootstrap/dist/css/bootstrap.css";
 import Rating from "@mui/material/Rating";
+import { Fab } from "@mui/material";
+import NavigationIcon from "@mui/icons-material/Navigation";
+import AddIcon from "@mui/icons-material/Add";
 
 import "./players.scss";
 
@@ -139,126 +142,152 @@ const Players = () => {
   //------cronometro para el partido de futbol con formato de tiempo.------//
 
   return (
-    <div className="container overflow-hidden text-center">
-      <div className="row">
-        <div className="col-12">
-          <h1 className="title display-6 material-symbols-outlined">
-            Fut8cho{" "}
-            <span role="img" aria-label="soccer">
-              ⚽
-            </span>
-          </h1>
+    <>
+      <div className="container overflow-hidden text-center">
+        <div className="row">
+          <div className="col-12">
+            <h1 className="title display-6 material-symbols-outlined">
+              Fut8cho{" "}
+              <span role="img" aria-label="soccer">
+                ⚽
+              </span>
+            </h1>
+          </div>
         </div>
-      </div>
-      <div className="row">
-        {/* <div className="col-12">
+        <div className="row">
+          {/* <div className="col-12">
           <form onSubmit={handleSubmit}>
             <input type="text" onChange={(e) => setPlayer(e.target.value)} />
             <button type="submit">Add Player</button>
           </form>
         </div> */}
-      </div>
-      <div className="row">
-        <div className="col-6">
-          <button
-            className="btn btn-primary btn-sm"
-            onClick={createTeams}
-            type="button"
-          >
-            Create Teams
-          </button>
         </div>
-        <div className="col-4">
-          <button
-            className="btn btn-primary btn-sm"
-            onClick={reset}
-            type="button"
-            style={{ float: "right" }}
-          >
-            Reset
-          </button>
+        <div className="row">
+          <div className="col-6 col-sm-6">
+            <Fab
+              variant="extended"
+              size="small"
+              color="primary"
+              aria-label="add"
+              onClick={createTeams}
+              type="button"
+            >
+              <AddIcon sx={{ mr: 1 }} />
+              Create Teams
+            </Fab>
+          </div>
 
-          <button
-            className="btn btn-primary btn-sm"
-            onClick={toggle}
-            type="button"
-            style={{ float: "right", marginRight: "10px" }}
-          >
-            {isActive ? "Pause" : "Start"}
-          </button>
+          <div className="col-4 col-sm-5">
+            <button
+              className="btn btn-primary btn-sm"
+              onClick={reset}
+              type="button"
+              style={{ float: "right" }}
+            >
+              Reset
+            </button>
 
-          <h3 style={{ float: "right", marginRight: "10px", color: "#EEEEEE" }}>
-            {formatDate(time)}
-          </h3>
-        </div>
-      </div>
-      <div className="row justify-content-center">
-        <div className="col-3">
-          <h2 className="team_tittle">Team 1</h2>
-          <ul className="list-group">
-            {team1.map((player) => (
-              <li className="list-group-item" key={player.id}>
-                {player.name}
-                <Rating
-                  name="size-small"
-                  value={player.level}
-                  readOnly
-                  size="small"
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="col-3">
-          <h2 className="team_tittle">Team 2</h2>
-          <ul className="list-group">
-            {team2.map((player) => (
-              <li className="list-group-item" key={player.id}>
-                {player.name}
-                <Rating
-                  name="size-small"
-                  value={player.level}
-                  readOnly
-                  size="small"
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="col-4">
-          <h2 className="team_tittle">Team 3</h2>
-          <ul className="list-group">
-            {team3.map((player) => (
-              <li className="list-group-item" key={player.id}>
-                {player.name}
-                <Rating
-                  name="size-small"
-                  value={player.level}
-                  readOnly
-                  size="small"
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
+            <button
+              className="btn btn-success btn-sm"
+              onClick={toggle}
+              type="button"
+              style={{ float: "right", marginRight: "10px" }}
+            >
+              {isActive ? "Pause" : "Start"}
+            </button>
 
-        <div className="col-3">
-          <h2 className="team_tittle">Sumatoria por equipo</h2>
-          <ul className="list-group text-center">
-            <li className="list-group-item">
-              Average Team 1: <tittle>{sumLevel(team1)}</tittle>
-            </li>
-            <li className="list-group-item">
-              Average Team 2: <tittle>{sumLevel(team2)}</tittle>
-            </li>
-            <li className="list-group-item">
-              Average Team 3:
-              <tittle> {sumLevel(team3)}</tittle>
-            </li>
-          </ul>
+            <h3
+              style={{ float: "right", marginRight: "10px", color: "#EEEEEE" }}
+            >
+              {formatDate(time)}
+            </h3>
+          </div>
         </div>
+        {team1.length > 0 && (
+          //order by level.
+          <div className="row justify-content-center">
+            <div className="col-md-3 col-sm-8 ">
+              <h2 className="team_tittle">Team 1</h2>
+              <ul className="list-group">
+                {team1
+                  .sort((a, b) => b.level - a.level)
+                  .map((player) => (
+                    <li className="list-group-item" key={player.id}>
+                      {player.name}
+                      <Rating
+                        className="rating"
+                        name="size-small"
+                        value={player.level}
+                        readOnly
+                        size="small"
+                      />
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div className="col-md-3 col-sm-8 ">
+              <h2 className="team_tittle">Team 2</h2>
+              <ul className="list-group">
+                {team2
+                  .sort((a, b) => b.level - a.level)
+                  .map((player) => (
+                    <li className="list-group-item" key={player.id}>
+                      {player.name}
+                      <Rating
+                        className="rating"
+                        name="size-small"
+                        value={player.level}
+                        readOnly
+                        size="small"
+                      />
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div className="col-md-3 col-sm-8">
+              <h2 className="team_tittle">Team 3</h2>
+              <ul className="list-group">
+                {team3
+                  .sort((a, b) => b.level - a.level)
+                  .map((player) => (
+                    <li className="list-group-item" key={player.id}>
+                      {player.name}
+                      <Rating
+                        className="rating"
+                        name="size-small"
+                        value={player.level}
+                        readOnly
+                        size="small"
+                      />
+                    </li>
+                  ))}
+              </ul>
+            </div>
+
+            {team1.length > 0 && (
+              <div
+                className="col--md-4 col-sm-8"
+                style={{ marginBottom: "30px" }}
+              >
+                <h2 className="team_tittle">Average</h2>
+                <ul className="list-group text-center">
+                  <li className="list-group-item">
+                    Team 1: <tittle>{sumLevel(team1)} Average</tittle>
+                  </li>
+                  <li className="list-group-item">
+                    Team 2: <tittle>{sumLevel(team2)} Average</tittle>
+                  </li>
+                  <li className="list-group-item">
+                    Team 3:
+                    <tittle> {sumLevel(team3)} Average</tittle>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 };
 
