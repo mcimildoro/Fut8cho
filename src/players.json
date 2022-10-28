@@ -1,5 +1,5 @@
         [{ "players":[
-            {"name":"Miguelees","position":"striker","level": 5 },
+            {"name":"Miguel","position":"striker","level": 3 },
             {"name":"Armando","position":"defender","level": 3},
             {"name":"Armando","position":"defender", "level": 3 },
             { "name":"Pablo", "position":"defender", "level": 3},
