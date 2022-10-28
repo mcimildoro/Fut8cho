@@ -1,33 +1,6 @@
-// [
-//     {"name":"Pablo","position":"defender","level": 3 },
-//     {"name":"Diego P.","position":"defender","level": 3 },
-//     {"name":"Sebas M.","position":"striker", "level": 5  },
-//     {"name":"Sebas T.", "position":"defender", "level": 2},
-//     {"name":"Miguel","position":"striker", "level": 3},
-//     {"name":"Jonathan", "position":"midfielder","level": 3 },
-//     {"name":"Millán","position":"defender", "level":3 },
-//     {"name":"Primor","position":"midfielder","level": 4},
-//     {"name":"Tony","position":"midfielder","level": 4 },
-//     {"name":"Dopi","position":"midfielder","level": 4 },
-//     {"name":"Juan S.","position":"midfielder","level":3 },
-//     {"name":"Javito","position":"defender","level": 2},
-//     {"name":"David","position":"midfielder","level": 3 },
-//     {"name":"Kalo","position":"defender","level": 4 },
-//     {"name":"Shalom (Javier+1)","position":"no se","level": 2 },
-//     {"name":"Armando","position":"midfielder","level": 4 },
-//     {"name":"Sosa (Armando +1)","position":"defender","level": 2 },
-//     {"name":"Luis M","position":"midfielder","level": 3 },
-//     {"name":"Sebas + 1(nico)","position":"no se","level": 2 },
-//     {"name":"Gilberto","position":"midfielder","level": 3 },
-//     {"name":"Helder","position":"midfielder","level": 5 },
-//     {"name":"Alejandro (sebas t+1) ","position":"no se","level": 3 },
-//     {"name":"Sergio","position":"striker","level": 4 },
-//     {"name":"Samu (Luis +1)","position":"no se","level": 2 }
-// ]
-
 [
-    {"id": 1, "name":"Antonio (Andres +1)","position":"midfielder","level": 3 },
-    {"id": 2, "name":"Maurizio (Andres +2)","position":"midfielder","level": 3 },
+    {"id": 1, "name":"Antonio (Andres +1)","position":"midfielder","level": 2 },
+    {"id": 2, "name":"Maurizio (Andres +2)","position":"midfielder","level": 2 },
     {"id": 3, "name":"Andres Z","position":"midfielder","level": 3 },
     {"id": 4, "name":" C. Rondón","position":"defender","level": 2 },
     {"id": 5, "name":"Raul","position":"midfielder", "level": 4  },
@@ -48,7 +21,6 @@
     {"id": 20, "name":"Kalo","position":"defender","level": 4 },
     {"id": 21, "name":"Armando","position":"midfielder","level": 4 },
     {"id": 22, "name":"Samu (Luis +1)","position":"no se","level": 2 },
-    {"id": 23, "name":"Roberto (Luis +1)","position":"no se","level": 2 },
     {"id": 23, "name":"Roberto (Luis +1)","position":"no se","level": 2 },
     {"id": 24,"name":"Helder","position":"midfielder","level": 5 }
 ]
