@@ -1,25 +1,29 @@
-        [{ "players":[
-            {"name":"Miguel","position":"striker","level": 3 },
-            {"name":"Armando","position":"defender","level": 3},
-            {"name":"Armando","position":"defender", "level": 3 },
-            { "name":"Pablo", "position":"defender", "level": 3},
-            {"name":"Javi","position":"defender", "level": 5 },
-            {"name":"Millan", "position":"defender","level": 3 },
-            { "name":"Primo","position":"midfielder", "level": 4 },
-            {"name":"Edwin","position":"midfielder","level": 3},
-            {"name":"Sebas M","position":"striker","level": 4},
-            {"name":"Luis P","position":"defender","level": 3},
-            {"name":"Diego P","position":"midfielder","level": 4 },
-            {"name":"Luis M","position":"midfielder","level": 5},
-            {"name":"Jonatan","position":"midfielder","level": 4},
-            {"name":"Jonatan","position":"midfielder","level": 4},
-            {"name":"Jonatan","position":"midfielder","level": 4},
-            {"name":"Jonatan","position":"midfielder","level": 4},
-            {"name":"Jonatan","position":"midfielder","level": 4},
-            {"name":"Jonatan","position":"midfielder","level": 4}
-            
-
-        ]
-    }]
+[
+    {"id": 1, "name":"Antonio (Andres +1)","position":"midfielder","level": 3 },
+    {"id": 2, "name":"Maurizio (Andres +2)","position":"midfielder","level": 3 },
+    {"id": 3, "name":"Andres Z","position":"midfielder","level": 3 },
+    {"id": 4, "name":" C. Rondón","position":"defender","level": 2 },
+    {"id": 5, "name":"Raul","position":"midfielder", "level": 4  },
+    {"id": 6, "name":"Lauro", "position":"defender", "level": 3},
+    {"id": 7, "name":"Jose","position":"defender", "level": 3},
+    {"id": 8, "name":"Jose + 1", "position":"midfielder","level": 2 },
+    {"id": 9, "name":"Joaco (primo +1)", "position":"defender","level": 3 },
+    {"id": 10, "name":"Jlo (primo +2)", "position":"midfielder","level": 2 },
+    {"id": 11, "name":"Jesús (Luis+1)", "position":"defender","level": 2 },
+    {"id": 12,"name":"Pablo","position":"defender","level": 3 },
+    {"id": 13,"name":"Diego P.","position":"defender","level": 3 },
+    {"id": 14,"name":"Gilberto","position":"midfielder","level": 3 },
+    {"id": 15, "name":"Primordial","position":"midfielder","level": 4},
+    {"id": 16, "name":"Javito","position":"defender","level": 2},
+    {"id": 17, "name":"Millán","position":"defender", "level":3 },
+    {"id": 18, "name":"Luis M","position":"midfielder","level": 3 },
+    {"id": 19, "name":"Miguel","position":"striker", "level": 3},
+    {"id": 20, "name":"Kalo","position":"defender","level": 4 },
+    {"id": 21, "name":"Armando","position":"midfielder","level": 4 },
+    {"id": 22, "name":"Samu (Luis +1)","position":"no se","level": 2 },
+    {"id": 23, "name":"Roberto (Luis +1)","position":"no se","level": 2 },
+    {"id": 23, "name":"Roberto (Luis +1)","position":"no se","level": 2 },
+    {"id": 24,"name":"Helder","position":"midfielder","level": 5 }
+]
 
 
