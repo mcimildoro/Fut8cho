@@ -27,66 +27,37 @@ const Players = () => {
     getData();
   }, []);
 
-  /// -------- create an input to add players. --------///
-  /// -------- create an input to add players. --------///
-  /// -------- create an input to add players. --------///
-
-  const addPlayer = (player) => {
-    const newPlayer = {
-      id: data.length + 1,
-      name: player,
-      position: "Midfielder",
-      level: 1,
-    };
-    setData([...data, newPlayer]);
-    console.log(data);
-  };
-
-  const [player, setPlayer] = useState("");
-
-  //create a button to add players.
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addPlayer(player);
-    setPlayer("");
-  };
-
   const sumLevel = (team) => {
     const sum = team.reduce((acc, player) => acc + player.level, 0);
     return sum;
   };
-
-  /// -------- create an input to add players. --------///
-  /// -------- create an input to add players. --------///
-  /// -------- create an input to add players. --------///
-
-  // ---- crear 3 equipos donde la sumatoria por nivel de los jugadores sea igual, que la sumatoria de los equipos menor a 25 y mayor a 20 (20-25) y que no se repitan jugadores. ----//
-  // ---- crear 3 equipos donde la sumatoria por nivel de los jugadores sea igual, que la sumatoria de los equipos menor a 25 y mayor a 20 (20-25) y que no se repitan jugadores. ----//
-  // ---- crear 3 equipos donde la sumatoria por nivel de los jugadores sea igual, que la sumatoria de los equipos menor a 25 y mayor a 20 (20-25) y que no se repitan jugadores. ----//
 
   const createTeams = () => {
     const team1 = [];
     const team2 = [];
     const team3 = [];
     const players = [...data];
+
     while (players.length > 0) {
       const random = Math.floor(Math.random() * players.length);
       const player = players.splice(random, 1)[0];
-      if (team1.length < 8) {
+      if (team1.length < 7) {
         team1.push(player);
-      } else if (team2.length < 8) {
+      } else if (team2.length < 7) {
         team2.push(player);
       } else {
         team3.push(player);
       }
     }
+    //no puede haber 2 jugadores duplicados.
+
     if (
-      sumLevel(team1) >= 20 &&
-      sumLevel(team1) <= 25 &&
-      sumLevel(team2) >= 20 &&
-      sumLevel(team2) <= 25 &&
-      sumLevel(team3) >= 20 &&
-      sumLevel(team3) <= 25
+      sumLevel(team1) >= 22.1 &&
+      sumLevel(team1) <= 23 &&
+      sumLevel(team2) >= 22.1 &&
+      sumLevel(team2) <= 23 &&
+      sumLevel(team3) >= 22.1 &&
+      sumLevel(team3) <= 23
     ) {
       setTeam1(team1);
       setTeam2(team2);
@@ -96,14 +67,8 @@ const Players = () => {
     }
   };
 
-  // ---- crear 3 equipos donde la sumatoria por nivel de los jugadores sea igual, que la sumatoria de los equipos menor a 25 y mayor a 20 (20-25) y que no se repitan jugadores. ----//
-  // ---- crear 3 equipos donde la sumatoria por nivel de los jugadores sea igual, que la sumatoria de los equipos menor a 25 y mayor a 20 (20-25) y que no se repitan jugadores. ----//
-  // ---- crear 3 equipos donde la sumatoria por nivel de los jugadores sea igual, que la sumatoria de los equipos menor a 25 y mayor a 20 (20-25) y que no se repitan jugadores. ----//
-
   //------cronometro para el partido de futbol con formato de tiempo.------//
   //------cronometro para el partido de futbol con formato de tiempo.------//
-  //------cronometro para el partido de futbol con formato de tiempo.------//
-
   const formatDate = (time) => {
     const getSeconds = `0${time % 60}`.slice(-2);
     const minutes = `${Math.floor(time / 60)}`;
@@ -272,14 +237,16 @@ const Players = () => {
                 <h2 className="team_tittle">Average</h2>
                 <ul className="list-group text-center">
                   <li className="list-group-item">
-                    Team 1: <tittle>{sumLevel(team1)} Average</tittle>
+                    Team 1:{" "}
+                    <tittle>{sumLevel(team1).toFixed(2)} Average</tittle>
                   </li>
                   <li className="list-group-item">
-                    Team 2: <tittle>{sumLevel(team2)} Average</tittle>
+                    Team 2:{" "}
+                    <tittle>{sumLevel(team2).toFixed(2)} Average</tittle>
                   </li>
                   <li className="list-group-item">
                     Team 3:
-                    <tittle> {sumLevel(team3)} Average</tittle>
+                    <tittle> {sumLevel(team3).toFixed(2)} Average</tittle>
                   </li>
                 </ul>
               </div>
